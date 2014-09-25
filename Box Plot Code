@@ -1,0 +1,1 @@
+boxplot(alldata$How.many.times.do.you.exercise.a.week.,ylab="Visits to the Gym")

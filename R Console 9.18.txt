@@ -1,0 +1,56 @@
+
+R version 3.1.1 (2014-07-10) -- "Sock it to Me"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.65 (6784) x86_64-apple-darwin10.8.0]
+
+[History restored from /Users/Jessica/.Rapp.history]
+
+> wd()
+Error: could not find function "wd"
+> getwd()
+[1] "/Users/Jessica/Desktop/ISAT"
+> source("shadnorm.")
+Error in file(filename, "r", encoding = encoding) : 
+  cannot open the connection
+In addition: Warning message:
+In file(filename, "r", encoding = encoding) :
+  cannot open file 'shadnorm.': No such file or directory
+> source("shadenorm.R")
+> shadenorm()
+> 
+> 
+> 
+> shadenorm(color='purple')
+> shadenorm()
+> shadenorm(mu=50,color='purple')
+> shadenorm(mu=50,color='blue')
+> shadenorm(mu=50,color='green')
+> shadenorm(mu=50,color='brown')
+shadenorm(mu=50,color='purple')
+> shadenorm(mu=50,color='red')
+> shadenorm(mu=50,color='white')
+> shadenorm(mu=50,color='yellow')
+shadenorm(mu=50,color='purple')
+> shadenorm(mu=50,color='orange')
+> shadenorm(mu=50,color='purple',between=TRUE)
+> shadenorm(mu=50,color='purple',between=NULL)
+> shadenorm(mu=50,color='purple',dens=1000)
+> 
+> shadenorm(mu=50,color='purple',dens=500,pcts=c(0.025,0.8))
+> 

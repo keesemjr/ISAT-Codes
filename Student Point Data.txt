@@ -1,0 +1,454 @@
+
+R version 3.1.1 (2014-07-10) -- "Sock it to Me"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.65 (6784) x86_64-apple-darwin10.8.0]
+
+[History restored from /Users/Jessica/.Rapp.history]
+
+> getwd()
+[1] "/Users/Jessica"
+> setwd("/Users/Jessica/Desktop")
+> getwd()
+[1] "/Users/Jessica/Desktop"
+> student_data <- read.csv("points.csv",header=TURE)
+Error in read.table(file = file, header = header, sep = sep, quote = quote,  : 
+  object 'TURE' not found
+> student_data <- read.csv("points.csv",header=TRUE)
+> student_data
+              student.class.activity.date.points.checker.exceptions  X X.1 X.2 X.3
+1                   aguilejr,252.1,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+2                          ALL,252.1,Install R,9/6/2014,1,radziwnm, NA  NA  NA  NA
+3                          ALL,252.2,Install R,9/6/2014,1,radziwnm, NA  NA  NA  NA
+4   ALL,252.1,GitHub Setup,9/9/2014,1,radziwnm,"crowlekx, sterrejc" NA  NA  NA  NA
+5                       ALL,252.2,GitHub Setup,9/9/2014,1,radziwnm, NA  NA  NA  NA
+6                  ander3ad,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+7                 ander3ad,344,Perceptron XOR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+8                            ander3ad,344,PAGE,9/8/2014,1,radziwnm, NA  NA  NA  NA
+9                            ander3ad,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+10                   baderba,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+11                  barbernd,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+12                  barneyha,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+13                    beller,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+14                  bouzahlz,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+15                 brathoag,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+16                         burnetce,251,IDAA 1,9/9/2014,3,cunninaf, NA  NA  NA  NA
+17                     campbebc,344,Intro Quiz,9/3/2014,1,radziwnm, NA  NA  NA  NA
+18          campbebc,344,Intelligent Exercise,9/10/2014,1,radziwnm, NA  NA  NA  NA
+19                 campbebc,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+20                           campbebc,344,PAGE,9/8/2014,1,radziwnm, NA  NA  NA  NA
+21                           campbebc,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+22                       carrar,344,Intro Quiz,9/3/2014,1,radziwnm, NA  NA  NA  NA
+23                   carrar,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+24                             carrar,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+25                 chancedc,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+26                           chancedc,344,PAGE,9/8/2014,1,radziwnm, NA  NA  NA  NA
+27                           chancedc,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+28                  clark2jw,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+29                      clinecm,344,Intro Quiz,9/3/2014,1,radziwnm, NA  NA  NA  NA
+30                  clinecm,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+31                            clinecm,344,PAGE,9/8/2014,1,radziwnm, NA  NA  NA  NA
+32                            clinecm,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+33                   cook2ea,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+34                  coope2nj,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+35                     dawkinrm,344,Intro Quiz,9/3/2014,1,radziwnm, NA  NA  NA  NA
+36                           dawkinrm,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+37                  deckerkr,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+38                    doddjc,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+39                  donov2me,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+40                  donovakj,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+41                     ellingrr,344,Intro Quiz,9/3/2014,1,radziwnm, NA  NA  NA  NA
+42                  fakhoukl,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+43                  farooqsn,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+44                  ferocecl,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+45                  gallagtm,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+46                  gaytonjj,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+47                  graveskd,252.2,Data Acq 2,9/11/2014,2,radziwnm, NA  NA  NA  NA
+48                   hinesje,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+49                   hurstjl,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+50                  keesemjr,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+51                  koontztn,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+52                  landespm,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+53                     lehmanej,344,Intro Quiz,9/3/2014,1,radziwnm, NA  NA  NA  NA
+54                 lehmanej,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+55                           lehmanej,344,PAGE,9/8/2014,1,radziwnm, NA  NA  NA  NA
+56                           lehmanej,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+57                   lyonsle,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+58                      majorcg,344,Intro Quiz,9/3/2014,1,radziwnm, NA  NA  NA  NA
+59                 medovamx,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+60                medovamx,344,Perceptron XOR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+61                medovamx,344,Perceptron XOR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+62                           medovamx,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+63                  mille9sl,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+64                 monterma,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+65                  murchiar,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+66                  odonnecj,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+67                     petreljn,344,Intro Quiz,9/3/2014,1,radziwnm, NA  NA  NA  NA
+68                 petreljn,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+69                petreljn,344,Perceptron XOR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+70                           petreljn,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+71                  pompeoel,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+72                  rendonap,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+73                  rollinjg,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+74                       roseph,344,Intro Quiz,9/3/2014,1,radziwnm, NA  NA  NA  NA
+75                             roseph,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+76                       rowedj,344,Intro Quiz,9/3/2014,1,radziwnm, NA  NA  NA  NA
+77                             rowedj,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+78                 sargenlt,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+79                           sargenlt,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+80                   sayedbf,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+81                  shaffetj,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+82                  sharpww,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+83                 sharpww,344,Perceptron XOR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+84                 sharpww,344,Perceptron XOR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+85                            sharpww,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+86                   shorbks,252.2,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+87                  somlaile,252.1,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+88                  soreeran,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+89                           sullivrx,344,PAGE,9/5/2014,1,radziwnm, NA  NA  NA  NA
+90                     sullivrx,344,Intro Quiz,9/3/2014,1,radziwnm, NA  NA  NA  NA
+91                 sullivrx,344,Perceptron OR,9/10/2014,2,radziwnm, NA  NA  NA  NA
+92                           sullivrx,344,PEAS,9/8/2014,1,radziwnm, NA  NA  NA  NA
+93                    sungrj,251,IDAA 1A M&Ms,9/11/2014,3,radziwnm, NA  NA  NA  NA
+94                   verdilx,252.1,Data Acq 1,9/11/2014,2,radziwnm, NA  NA  NA  NA
+95                  carrar,344,Perceptron XOR,9/15/2014,2,radziwnm, NA  NA  NA  NA
+96                            carrar,344,PAGE,9/15/2014,1,radziwnm, NA  NA  NA  NA
+97               carrar,344,Agent Environment,9/15/2014,1,radziwnm, NA  NA  NA  NA
+98                          petreljn,344,PAGE,9/15/2014,1,radziwnm, NA  NA  NA  NA
+99             petreljn,344,Agent Environment,9/15/2014,1,radziwnm, NA  NA  NA  NA
+100                    foxsl,252.2,Data Acq 1,9/15/2014,2,radziwnm, NA  NA  NA  NA
+101                   lee3de,252.1,Data Acq 1,9/15/2014,2,radziwnm, NA  NA  NA  NA
+102                   berry6cm,252.1,Data Acq 1,9/16/2014,2,roseph, NA  NA  NA  NA
+103                         phelanmw,344,PAGE,9/16/2014,1,radziwnm, NA  NA  NA  NA
+104                         phelanmw,344,PEAS,9/16/2014,1,radziwnm, NA  NA  NA  NA
+105            phelanmw,344,Agent Environment,9/16/2014,1,radziwnm, NA  NA  NA  NA
+106                phelanmw,344,Perceptron OR,9/16/2014,2,radziwnm, NA  NA  NA  NA
+107                 donovaep,251,IDAA IA M&Ms,9/16/2014,3,radziwnm, NA  NA  NA  NA
+108                 messicjd,251,IDAA IA M&Ms,9/16/2014,3,radziwnm, NA  NA  NA  NA
+109                 fitzpaar,251,IDAA IA M&Ms,9/16/2014,3,radziwnm, NA  NA  NA  NA
+110                 liberaaf,251,IDAA IA M&Ms,9/16/2014,3,radziwnm, NA  NA  NA  NA
+111                 mille8ca,251,IDAA IA M&Ms,9/16/2014,3,radziwnm, NA  NA  NA  NA
+112                  ross2cr,251,IDAA IA M&Ms,9/16/2014,3,radziwnm, NA  NA  NA  NA
+113                   doddjc,251,IDAA 1B Auto,9/16/2014,3,cunninaf, NA  NA  NA  NA
+114                 mille8ca,251,IDAA 1B Auto,9/16/2014,3,radziwnm, NA  NA  NA  NA
+115                 gaytonjj,251,IDAA 1B Auto,9/16/2014,3,cunninaf, NA  NA  NA  NA
+116               phelanmw,344,Perceptron XOR,9/16/2014,2,radziwnm, NA  NA  NA  NA
+117                 bouzahlz,251,IDAA 1B Auto,9/16/2014,3,radziwnm, NA  NA  NA  NA
+118                 rollinjg,251,IDAA 1B Auto,9/16/2014,3,cunninaf, NA  NA  NA  NA
+119                   sungrj,251,IDAA 1B Auto,9/16/2014,3,cunninaf, NA  NA  NA  NA
+120             rollinjg,251,IDAA 2B Sampling,9/18/2014,3,cunninaf, NA  NA  NA  NA
+121               doddjc,251,IDAA 2B Sampling,9/18/2014,3,cunninaf, NA  NA  NA  NA
+122                  sayedbf,251,IDAA 1B Auto,9/18/2014,3,cunninaf, NA  NA  NA  NA
+123                 barneyha,251,IDAA 1B Auto,9/18/2014,3,cunninaf, NA  NA  NA  NA
+124             sorberan,251,IDAA 2B Sampling,9/18/2014,3,cunninaf, NA  NA  NA  NA
+125             murchiar,251,IDAA 2B Sampling,9/18/2014,3,cunninaf, NA  NA  NA  NA
+126                  doddjc,251,IDAA 1C Pulse,9/18/2014,3,cunninaf, NA  NA  NA  NA
+127                 COOPE2NJ,251,IDAA 1B Auto,9/18/2014,3,cunninaf, NA  NA  NA  NA
+128                 landespm,251,IDAA 1B Auto,9/18/2014,3,cunninaf, NA  NA  NA  NA
+129                 sorberan,251,IDAA 1B Auto,9/18/2014,3,cunninaf, NA  NA  NA  NA
+130                 murchiar,251,IDAA 1B Auto,9/18/2014,3,cunninaf, NA  NA  NA  NA
+131                 mille9sl,251,IDAA 1B Auto,9/18/2014,3,cunninaf, NA  NA  NA  NA
+132                 koontztn,251,IDAA 1B Auto,9/18/2014,3,cunninaf, NA  NA  NA  NA
+133                 liberaaf,251,IDAA 1B Auto,9/18/2014,3,cunninaf, NA  NA  NA  NA
+134                  ross2cr,251,IDAA 1B Auto,9/18/2014,3,cunninaf, NA  NA  NA  NA
+135   ALL,252.1,Data Management Plan Exercise,9/18/2014,2,radziwnm, NA  NA  NA  NA
+136   ALL,252.2,Data Management Plan Exercise,9/18/2014,2,radziwnm, NA  NA  NA  NA
+137           lee3de,252.1,Data Acquisition 2,9/22/2014,2,radziwnm, NA  NA  NA  NA
+138         bowlesjw,252.1,Data Acquisition 1,9/22/2014,2,radziwnm, NA  NA  NA  NA
+139         berry6cm,252.1,Data Acquisition 2,9/22/2014,2,radziwnm, NA  NA  NA  NA
+140         moralejs,252.1,Data Acquisition 1,9/22/2014,2,radziwnm, NA  NA  NA  NA
+141         baile2jd,252.1,Data Acquisition 1,9/22/2014,2,radziwnm, NA  NA  NA  NA
+142         aguilejr,252.1,Data Acquisition 1,9/22/2014,2,radziwnm, NA  NA  NA  NA
+143         somlaile,252.1,Data Acquisition 1,9/22/2014,2,radziwnm, NA  NA  NA  NA
+144          verdilx,252.1,Data Acquisition 2,9/22/2014,2,radziwnm, NA  NA  NA  NA
+145         newsomtj,252.1,Data Acquisition 2,9/22/2014,2,radziwnm, NA  NA  NA  NA
+146         desmedce,252.1,Data Acquisition 2,9/22/2014,2,radziwnm, NA  NA  NA  NA
+147         bealerjm,252.1,Data Acquisition 1,9/22/2014,2,radziwnm, NA  NA  NA  NA
+148         bealerjm,252.1,Data Acquisition 2,9/22/2014,2,radziwnm, NA  NA  NA  NA
+149            merhi6js,252.1,Creating Images,9/22/2014,2,radziwnm, NA  NA  NA  NA
+150             teetsrj,252.1,Creating Images,9/22/2014,2,radziwnm, NA  NA  NA  NA
+151        rkronlein,252.1,Data Acquisition 1,9/22/2014,2,radziwnm, NA  NA  NA  NA
+152         bowlesjw,252.1,Data Acquisition 2,9/22/2014,2,radziwnm, NA  NA  NA  NA
+153         murph4ma,252.1,Data Acquisition 1,9/22/2014,2,radziwnm, NA  NA  NA  NA
+154         parkhuod,252.1,Data Acquisition 2,9/22/2014,2,radziwnm, NA  NA  NA  NA
+155         sterrejc,252.1,Data Acquisition 2,9/22/2014,2,radziwnm, NA  NA  NA  NA
+156         larsenph,252.1,Data Acquisition 1,9/22/2014,2,radziwnm, NA  NA  NA  NA
+157         robin2eb,252.1,Data Acquisition 1,9/22/2014,2,radziwnm, NA  NA  NA  NA
+158             lovingax,252.1,Data Acquisition,9/22/2014,2,roseph, NA  NA  NA  NA
+159             chrispzt,252.1,Data Acquisition,9/22/2014,2,roseph, NA  NA  NA  NA
+> student_data <- read.csv("points2.csv",header=TRUE)
+> student_data
+      student class                      activity    date points  checker         exceptions
+1    aguilejr 252.1                    Data Acq 1 9/11/14      2 radziwnm                   
+2         ALL 252.1                     Install R  9/6/14      1 radziwnm                   
+3         ALL 252.2                     Install R  9/6/14      1 radziwnm                   
+4         ALL 252.1                  GitHub Setup  9/9/14      1 radziwnm crowlekx, sterrejc
+5         ALL 252.2                  GitHub Setup  9/9/14      1 radziwnm                   
+6    ander3ad 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+7    ander3ad 344.0                Perceptron XOR 9/10/14      2 radziwnm                   
+8    ander3ad 344.0                          PAGE  9/8/14      1 radziwnm                   
+9    ander3ad 344.0                          PEAS  9/8/14      1 radziwnm                   
+10    baderba 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+11   barbernd 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+12   barneyha 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+13     beller 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+14   bouzahlz 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+15   brathoag 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+16   burnetce 251.0                        IDAA 1  9/9/14      3 cunninaf                   
+17   campbebc 344.0                    Intro Quiz  9/3/14      1 radziwnm                   
+18   campbebc 344.0          Intelligent Exercise 9/10/14      1 radziwnm                   
+19   campbebc 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+20   campbebc 344.0                          PAGE  9/8/14      1 radziwnm                   
+21   campbebc 344.0                          PEAS  9/8/14      1 radziwnm                   
+22     carrar 344.0                    Intro Quiz  9/3/14      1 radziwnm                   
+23     carrar 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+24     carrar 344.0                          PEAS  9/8/14      1 radziwnm                   
+25   chancedc 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+26   chancedc 344.0                          PAGE  9/8/14      1 radziwnm                   
+27   chancedc 344.0                          PEAS  9/8/14      1 radziwnm                   
+28   clark2jw 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+29    clinecm 344.0                    Intro Quiz  9/3/14      1 radziwnm                   
+30    clinecm 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+31    clinecm 344.0                          PAGE  9/8/14      1 radziwnm                   
+32    clinecm 344.0                          PEAS  9/8/14      1 radziwnm                   
+33    cook2ea 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+34   coope2nj 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+35   dawkinrm 344.0                    Intro Quiz  9/3/14      1 radziwnm                   
+36   dawkinrm 344.0                          PEAS  9/8/14      1 radziwnm                   
+37   deckerkr 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+38     doddjc 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+39   donov2me 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+40   donovakj 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+41   ellingrr 344.0                    Intro Quiz  9/3/14      1 radziwnm                   
+42   fakhoukl 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+43   farooqsn 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+44   ferocecl 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+45   gallagtm 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+46   gaytonjj 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+47   graveskd 252.2                    Data Acq 2 9/11/14      2 radziwnm                   
+48    hinesje 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+49    hurstjl 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+50   keesemjr 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+51   koontztn 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+52   landespm 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+53   lehmanej 344.0                    Intro Quiz  9/3/14      1 radziwnm                   
+54   lehmanej 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+55   lehmanej 344.0                          PAGE  9/8/14      1 radziwnm                   
+56   lehmanej 344.0                          PEAS  9/8/14      1 radziwnm                   
+57    lyonsle 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+58    majorcg 344.0                    Intro Quiz  9/3/14      1 radziwnm                   
+59   medovamx 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+60   medovamx 344.0                Perceptron XOR 9/10/14      2 radziwnm                   
+61   medovamx 344.0                Perceptron XOR 9/10/14      2 radziwnm                   
+62   medovamx 344.0                          PEAS  9/8/14      1 radziwnm                   
+63   mille9sl 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+64   monterma 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+65   murchiar 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+66   odonnecj 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+67   petreljn 344.0                    Intro Quiz  9/3/14      1 radziwnm                   
+68   petreljn 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+69   petreljn 344.0                Perceptron XOR 9/10/14      2 radziwnm                   
+70   petreljn 344.0                          PEAS  9/8/14      1 radziwnm                   
+71   pompeoel 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+72   rendonap 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+73   rollinjg 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+74     roseph 344.0                    Intro Quiz  9/3/14      1 radziwnm                   
+75     roseph 344.0                          PEAS  9/8/14      1 radziwnm                   
+76     rowedj 344.0                    Intro Quiz  9/3/14      1 radziwnm                   
+77     rowedj 344.0                          PEAS  9/8/14      1 radziwnm                   
+78   sargenlt 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+79   sargenlt 344.0                          PEAS  9/8/14      1 radziwnm                   
+80    sayedbf 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+81   shaffetj 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+82    sharpww 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+83    sharpww 344.0                Perceptron XOR 9/10/14      2 radziwnm                   
+84    sharpww 344.0                Perceptron XOR 9/10/14      2 radziwnm                   
+85    sharpww 344.0                          PEAS  9/8/14      1 radziwnm                   
+86    shorbks 252.2                    Data Acq 1 9/11/14      2 radziwnm                   
+87   somlaile 252.1                    Data Acq 1 9/11/14      2 radziwnm                   
+88   soreeran 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+89   sullivrx 344.0                          PAGE  9/5/14      1 radziwnm                   
+90   sullivrx 344.0                    Intro Quiz  9/3/14      1 radziwnm                   
+91   sullivrx 344.0                 Perceptron OR 9/10/14      2 radziwnm                   
+92   sullivrx 344.0                          PEAS  9/8/14      1 radziwnm                   
+93     sungrj 251.0                  IDAA 1A M&Ms 9/11/14      3 radziwnm                   
+94    verdilx 252.1                    Data Acq 1 9/11/14      2 radziwnm                   
+95     carrar 344.0                Perceptron XOR 9/15/14      2 radziwnm                   
+96     carrar 344.0                          PAGE 9/15/14      1 radziwnm                   
+97     carrar 344.0             Agent Environment 9/15/14      1 radziwnm                   
+98   petreljn 344.0                          PAGE 9/15/14      1 radziwnm                   
+99   petreljn 344.0             Agent Environment 9/15/14      1 radziwnm                   
+100     foxsl 252.2                    Data Acq 1 9/15/14      2 radziwnm                   
+101    lee3de 252.1                    Data Acq 1 9/15/14      2 radziwnm                   
+102  berry6cm 252.1                    Data Acq 1 9/16/14      2   roseph                   
+103  phelanmw 344.0                          PAGE 9/16/14      1 radziwnm                   
+104  phelanmw 344.0                          PEAS 9/16/14      1 radziwnm                   
+105  phelanmw 344.0             Agent Environment 9/16/14      1 radziwnm                   
+106  phelanmw 344.0                 Perceptron OR 9/16/14      2 radziwnm                   
+107  donovaep 251.0                  IDAA IA M&Ms 9/16/14      3 radziwnm                   
+108  messicjd 251.0                  IDAA IA M&Ms 9/16/14      3 radziwnm                   
+109  fitzpaar 251.0                  IDAA IA M&Ms 9/16/14      3 radziwnm                   
+110  liberaaf 251.0                  IDAA IA M&Ms 9/16/14      3 radziwnm                   
+111  mille8ca 251.0                  IDAA IA M&Ms 9/16/14      3 radziwnm                   
+112   ross2cr 251.0                  IDAA IA M&Ms 9/16/14      3 radziwnm                   
+113    doddjc 251.0                  IDAA 1B Auto 9/16/14      3 cunninaf                   
+114  mille8ca 251.0                  IDAA 1B Auto 9/16/14      3 radziwnm                   
+115  gaytonjj 251.0                  IDAA 1B Auto 9/16/14      3 cunninaf                   
+116  phelanmw 344.0                Perceptron XOR 9/16/14      2 radziwnm                   
+117  bouzahlz 251.0                  IDAA 1B Auto 9/16/14      3 radziwnm                   
+118  rollinjg 251.0                  IDAA 1B Auto 9/16/14      3 cunninaf                   
+119    sungrj 251.0                  IDAA 1B Auto 9/16/14      3 cunninaf                   
+120  rollinjg 251.0              IDAA 2B Sampling 9/18/14      3 cunninaf                   
+121    doddjc 251.0              IDAA 2B Sampling 9/18/14      3 cunninaf                   
+122   sayedbf 251.0                  IDAA 1B Auto 9/18/14      3 cunninaf                   
+123  barneyha 251.0                  IDAA 1B Auto 9/18/14      3 cunninaf                   
+124  sorberan 251.0              IDAA 2B Sampling 9/18/14      3 cunninaf                   
+125  murchiar 251.0              IDAA 2B Sampling 9/18/14      3 cunninaf                   
+126    doddjc 251.0                 IDAA 1C Pulse 9/18/14      3 cunninaf                   
+127  COOPE2NJ 251.0                  IDAA 1B Auto 9/18/14      3 cunninaf                   
+128  landespm 251.0                  IDAA 1B Auto 9/18/14      3 cunninaf                   
+129  sorberan 251.0                  IDAA 1B Auto 9/18/14      3 cunninaf                   
+130  murchiar 251.0                  IDAA 1B Auto 9/18/14      3 cunninaf                   
+131  mille9sl 251.0                  IDAA 1B Auto 9/18/14      3 cunninaf                   
+132  koontztn 251.0                  IDAA 1B Auto 9/18/14      3 cunninaf                   
+133  liberaaf 251.0                  IDAA 1B Auto 9/18/14      3 cunninaf                   
+134   ross2cr 251.0                  IDAA 1B Auto 9/18/14      3 cunninaf                   
+135       ALL 252.1 Data Management Plan Exercise 9/18/14      2 radziwnm                   
+136       ALL 252.2 Data Management Plan Exercise 9/18/14      2 radziwnm                   
+137    lee3de 252.1            Data Acquisition 2 9/22/14      2 radziwnm                   
+138  bowlesjw 252.1            Data Acquisition 1 9/22/14      2 radziwnm                   
+139  berry6cm 252.1            Data Acquisition 2 9/22/14      2 radziwnm                   
+140  moralejs 252.1            Data Acquisition 1 9/22/14      2 radziwnm                   
+141  baile2jd 252.1            Data Acquisition 1 9/22/14      2 radziwnm                   
+142  aguilejr 252.1            Data Acquisition 1 9/22/14      2 radziwnm                   
+143  somlaile 252.1            Data Acquisition 1 9/22/14      2 radziwnm                   
+144   verdilx 252.1            Data Acquisition 2 9/22/14      2 radziwnm                   
+145  newsomtj 252.1            Data Acquisition 2 9/22/14      2 radziwnm                   
+146  desmedce 252.1            Data Acquisition 2 9/22/14      2 radziwnm                   
+147  bealerjm 252.1            Data Acquisition 1 9/22/14      2 radziwnm                   
+148  bealerjm 252.1            Data Acquisition 2 9/22/14      2 radziwnm                   
+149  merhi6js 252.1               Creating Images 9/22/14      2 radziwnm                   
+150   teetsrj 252.1               Creating Images 9/22/14      2 radziwnm                   
+151 rkronlein 252.1            Data Acquisition 1 9/22/14      2 radziwnm                   
+152  bowlesjw 252.1            Data Acquisition 2 9/22/14      2 radziwnm                   
+153  murph4ma 252.1            Data Acquisition 1 9/22/14      2 radziwnm                   
+154  parkhuod 252.1            Data Acquisition 2 9/22/14      2 radziwnm                   
+155  sterrejc 252.1            Data Acquisition 2 9/22/14      2 radziwnm                   
+156  larsenph 252.1            Data Acquisition 1 9/22/14      2 radziwnm                   
+157  robin2eb 252.1            Data Acquisition 1 9/22/14      2 radziwnm                   
+158  lovingax 252.1              Data Acquisition 9/22/14      2   roseph                   
+159  chrispzt 252.1              Data Acquisition 9/22/14      2   roseph                   
+> points$student=="keesemjr"
+Error in points$student : object of type 'closure' is not subsettable
+> points2$student=="keesemjr"
+Error: object 'points2' not found
+> student_data[student_data$student=="keesemjr",]
+    student class   activity    date points  checker exceptions
+50 keesemjr 252.2 Data Acq 1 9/11/14      2 radziwnm           
+> student_data[student_data$class="252.2",student=="keesemjr",student="ALL"]
+Error: unexpected '=' in "student_data[student_data$class="
+> student_data[student_data$class="252.2",student=="keesemjr",student="ALL",]
+Error: unexpected '=' in "student_data[student_data$class="
+> student_data[student_data$class="252.2",student=="keesemjr",]
+Error: unexpected '=' in "student_data[student_data$class="
+> student_data[student_data$class="252.2",]
+Error: unexpected '=' in "student_data[student_data$class="
+> student_data[student_data$class=="252.2",]
+     student class                      activity    date points  checker exceptions
+3        ALL 252.2                     Install R  9/6/14      1 radziwnm           
+5        ALL 252.2                  GitHub Setup  9/9/14      1 radziwnm           
+11  barbernd 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+28  clark2jw 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+33   cook2ea 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+39  donov2me 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+40  donovakj 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+44  ferocecl 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+45  gallagtm 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+47  graveskd 252.2                    Data Acq 2 9/11/14      2 radziwnm           
+48   hinesje 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+49   hurstjl 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+50  keesemjr 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+57   lyonsle 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+66  odonnecj 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+86   shorbks 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+100    foxsl 252.2                    Data Acq 1 9/15/14      2 radziwnm           
+136      ALL 252.2 Data Management Plan Exercise 9/18/14      2 radziwnm           
+> student_data[student_data$class=="252.2",student_data$student=="keesemjr",]
+NULL
+> student_data[student_data$class=="252.2",student_data$student=="keesemjr"]
+NULL
+> student_data[student_data$class=="252.2" && student_data$student=="keesemjr"]
+data frame with 0 columns and 159 rows
+> student_data[student_data$class=="252.2" && student_data$student=="keesemjr",]
+[1] student    class      activity   date       points     checker    exceptions
+<0 rows> (or 0-length row.names)
+> student_data[student_data$class=="252.2",student_data$student=="keesemjr",] && student_data[student_data$class=="252.2",student_data$student=="ALL",]
+Error in student_data[student_data$class == "252.2", student_data$student ==  : 
+  invalid 'x' type in 'x && y'
+> student_data[student_data$class=="252.2",]
+     student class                      activity    date points  checker exceptions
+3        ALL 252.2                     Install R  9/6/14      1 radziwnm           
+5        ALL 252.2                  GitHub Setup  9/9/14      1 radziwnm           
+11  barbernd 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+28  clark2jw 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+33   cook2ea 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+39  donov2me 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+40  donovakj 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+44  ferocecl 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+45  gallagtm 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+47  graveskd 252.2                    Data Acq 2 9/11/14      2 radziwnm           
+48   hinesje 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+49   hurstjl 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+50  keesemjr 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+57   lyonsle 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+66  odonnecj 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+86   shorbks 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+100    foxsl 252.2                    Data Acq 1 9/15/14      2 radziwnm           
+136      ALL 252.2 Data Management Plan Exercise 9/18/14      2 radziwnm           
+> student_data[student_data$student=="keesemjr",]
+    student class   activity    date points  checker exceptions
+50 keesemjr 252.2 Data Acq 1 9/11/14      2 radziwnm           
+> student_data[student_data$class=="keesemjr","ALL"]
+NULL
+> student_data[student_data$class=="252.2",]
+     student class                      activity    date points  checker exceptions
+3        ALL 252.2                     Install R  9/6/14      1 radziwnm           
+5        ALL 252.2                  GitHub Setup  9/9/14      1 radziwnm           
+11  barbernd 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+28  clark2jw 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+33   cook2ea 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+39  donov2me 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+40  donovakj 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+44  ferocecl 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+45  gallagtm 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+47  graveskd 252.2                    Data Acq 2 9/11/14      2 radziwnm           
+48   hinesje 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+49   hurstjl 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+50  keesemjr 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+57   lyonsle 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+66  odonnecj 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+86   shorbks 252.2                    Data Acq 1 9/11/14      2 radziwnm           
+100    foxsl 252.2                    Data Acq 1 9/15/14      2 radziwnm           
+136      ALL 252.2 Data Management Plan Exercise 9/18/14      2 radziwnm           
+> student_data[student_data$student=="keesemjr",]
+    student class   activity    date points  checker exceptions
+50 keesemjr 252.2 Data Acq 1 9/11/14      2 radziwnm           
+> student_data[student_data$student=="hinesje",]
+   student class   activity    date points  checker exceptions
+48 hinesje 252.2 Data Acq 1 9/11/14      2 radziwnm           
+> 
